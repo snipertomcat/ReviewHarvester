@@ -1,0 +1,4 @@
+stc_scraper:
+    resource: "@StcScraperBundle/Resources/config/routing.yml"
+    prefix:   /
+
