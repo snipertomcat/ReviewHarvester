@@ -1,0 +1,29 @@
+Stc\ScraperBundle\Entity\Feeds:
+    type: entity
+    table: feeds
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 50
+            unique: true
+        url:
+            type: string
+            length: 100
+            unique: true
+        entity_id:
+            type: integer
+            length: 10
+        is_active:
+            type: string
+            length: 1
+        created_at:
+            type: datetime
+        updated_at:
+            type: datetime
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue, setUpdatedAtValue ]
+        preUpdate:  [ setUpdatedAtValue ]

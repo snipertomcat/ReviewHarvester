@@ -1,0 +1,20 @@
+Stc\ScraperBundle\Entity\LinksFeedsHarvested:
+    type: entity
+    table: links_feeds_harvested
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        url:
+            type: text
+        discovered_at:
+            type: datetime
+        scraped_at:
+            type: datetime
+        status:
+            type: integer
+            size: 1
+            default: 1
+    lifecycleCallbacks:
+        prePersist: [ setDescoveredAt ]

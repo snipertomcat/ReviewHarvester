@@ -1,0 +1,12 @@
+Stc\ScraperBundle\Entity\ScrapeContent:
+    type: entity
+    table: scrape_content
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        headers:
+            type: text
+        data:
+            type: text

@@ -1,3 +1,0 @@
-stc_scraper_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: StcScraperBundle:Default:index }

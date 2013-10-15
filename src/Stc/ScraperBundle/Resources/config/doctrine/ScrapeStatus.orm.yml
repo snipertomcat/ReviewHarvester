@@ -1,0 +1,97 @@
+Stc\ScraperBundle\Entity\ScrapeStatus:
+    type: entity
+    table: scrape_status
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        content_type:
+            type: string
+            length: 100
+        http_code:
+            type: integer
+            length: 4
+        header_size:
+            type: integer
+            length: 5
+        request_size:
+            type: integer
+            length: 5
+        filetime:
+            type: string
+            length: 50
+        ssl_verify_result:
+            type: string
+            length: 100
+        redirect_count:
+            type: integer
+            length: 4
+        total_time:
+            type: float
+        namelookup_time:
+            type: string
+            length: 50
+        connect_time:
+            type: float
+        pretransfer_time:
+            type: float
+        size_upload:
+            type: integer
+            length: 10
+        size_download:
+            type: integer
+            length: 10
+        speed_download:
+            type: string
+            length: 50
+        speed_upload:
+            type: string
+            length: 50
+        download_content_length:
+            type: integer
+            length: 10
+        upload_content_length:
+            type: integer
+            length: 10
+        starttransfer_time:
+            type: string
+            length: 50
+        redirect_time:
+            type: string
+            length: 50
+        certinfo:
+            type: string
+            length: 255
+        primary_ip:
+            type: string
+            length: 20
+        primary_port:
+            type: integer
+            length: 5
+        local_ip:
+            type: string
+            length: 20
+        local_port:
+            type: integer
+            length: 5
+        redirect_url:
+            type: string
+            length: 255
+        created_at:
+            type: datetime
+        updated_at:
+            type: datetime
+    oneToOne:
+        scrapecontent:
+            targetEntity: Stc\ScraperBundle\Entity\ScrapeContent
+            joinColumn:
+                name: content_id
+                referencedColumnName: id
+        website:
+            targetEntity: Stc\ScraperBundle\Entity\Website
+            joinColumn:
+                name: website_id
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue ]
+        preUpdate:  [ setUpdatedAtValue ]
