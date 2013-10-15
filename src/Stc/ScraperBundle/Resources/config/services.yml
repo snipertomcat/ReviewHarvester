@@ -1,0 +1,25 @@
+parameters:
+#    stc_scraper.example.class: Stc\ScraperBundle\Example
+    stc_scraper.http.class: Stc\ScraperBundle\Component\LibHttp
+    webbot_name: "Test Webbot"
+    curl_timeout: 25
+    cookie_file: "c:\cookie.txt"
+    stc_scraper.images.class: Stc\ScraperBundle\Component\LibDownloadImages
+    stc_scraper.resolver.class: Stc\ScraperBundle\Component\LibAddressResolver
+    stc_scraper.parser.class: Stc\ScraperBundle\Component\LibParser
+
+services:
+#    stc_scraper.example:
+#        class: %stc_scraper.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    stc_scraper.http:
+        class: %stc_scraper.http.class%
+        arguments: ["http_class", %webbot_name%, %curl_timeout%, %cookie_file%]
+    stc_scraper.resolver:
+        class: %stc_scraper.resolver.class%
+    stc_scraper.parser:
+        class: %stc_scraper.parser.class%
+        arguments: []
+    stc_scraper.images:
+        class: %stc_scraper.images.class%
+        arguments: ['@stc_scraper.parser', '@stc_scraper.http', '@stc_scraper.resolver']
