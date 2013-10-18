@@ -10,6 +10,7 @@ class ScrapeSolutionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('website', new WebsiteType());
+        $builder->add('entity', new EntityType());
 
     }
 

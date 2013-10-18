@@ -1,18 +1,17 @@
-Stc\ScraperBundle\Entity\Website:
+Stc\ScraperBundle\Entity\Entity:
     type: entity
-    table: websites
+    table: entity
     id:
         id:
             type: integer
             generator: { strategy: AUTO }
     fields:
-        url:
+        desc:
             type: string
-            length: 100
-            unique: true
-        entity_id:
-            type: integer
-            length: 10
+            length: 255
+        name:
+            type: string
+            length: 30
         is_active:
             type: string
             length: 1
@@ -20,13 +19,13 @@ Stc\ScraperBundle\Entity\Website:
             type: datetime
         updated_at:
             type: datetime
-    manyToOne:
-        entity:
-            targetEntity: Entity
-            inversedBy: entities
-            joinColumn:
-                name: entity_id
-                referencedColumnName: id
+    oneToMany:
+        websites:
+            targetEntity: Website
+            mappedBy: entity_id
+        website_entities:
+            targetEntity: WebsiteEntity
+            mappedBy: entity_id
     lifecycleCallbacks:
         prePersist: [ setCreatedAtValue ]
         preUpdate:  [ setUpdatedAtValue ]

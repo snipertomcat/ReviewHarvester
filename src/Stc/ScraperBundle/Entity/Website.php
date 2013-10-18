@@ -179,4 +179,32 @@ class Website
     {
         // Add your code here
     }
+    /**
+     * @var \Stc\ScraperBundle\Entity\Entity
+     */
+    private $entity;
+
+
+    /**
+     * Set entity
+     *
+     * @param \Stc\ScraperBundle\Entity\Entity $entity
+     * @return Website
+     */
+    public function setEntity(\Stc\ScraperBundle\Entity\Entity $entity = null)
+    {
+        $this->entity = $entity;
+    
+        return $this;
+    }
+
+    /**
+     * Get entity
+     *
+     * @return \Stc\ScraperBundle\Entity\Entity 
+     */
+    public function getEntity()
+    {
+        return $this->entity;
+    }
 }

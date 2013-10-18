@@ -13,6 +13,8 @@ class ScrapeSolution
      */
     protected $website;
 
+    protected $entity;
+
     public function getWebsite()
     {
         return $this->website;
@@ -21,5 +23,15 @@ class ScrapeSolution
     public function setWebsite($site)
     {
         $this->website = $site;
+    }
+
+    public function setEntity($entity)
+    {
+        $this->entity = $entity;
+    }
+
+    public function getEntity()
+    {
+        return $this->entity;
     }
 }

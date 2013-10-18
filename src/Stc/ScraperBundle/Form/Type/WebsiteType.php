@@ -18,8 +18,6 @@ class WebsiteType extends AbstractType
             ->add('url')
             ->add('entity_id')
             ->add('is_active')
-            ->add('created_at')
-            ->add('updated_at')
         ;
     }
     
