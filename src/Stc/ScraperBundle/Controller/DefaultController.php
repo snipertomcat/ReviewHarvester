@@ -20,8 +20,19 @@ class DefaultController extends Controller
             new ScrapeSolution()
         );
 
+        $this->form = $form;
+
         $page_data['form'] = $form->createView();
 
         return $this->render('StcScraperBundle:Default:index.html.twig', $page_data);
+    }
+
+    public function postAction()
+    {
+        $page_data  = array();
+
+        if ($this->getRequest()->isMethod('POST')) {
+
+        }
     }
 }
