@@ -4,4 +4,4 @@ stc_scraper_homepage:
 
 stc_scraper_form_entity_submit:
   pattern:  /insert/entity
-  defaults: { _controller: StcScraperBundle:Default:post}
+  defaults: { _controller: StcScraperBundle:Default:post }
