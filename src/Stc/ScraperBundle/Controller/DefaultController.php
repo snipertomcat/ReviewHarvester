@@ -20,33 +20,19 @@ class DefaultController extends Controller
             new ScrapeSolution()
         );
 
+        $this->form = $form;
+
         $page_data['form'] = $form->createView();
 
         return $this->render('StcScraperBundle:Default:index.html.twig', $page_data);
     }
 
-    public function createAction()
+    public function postAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $page_data  = array();
 
-        $form = $this->createForm(new ScrapeSolutionType(), new ScrapeSolution());
+        if ($this->getRequest()->isMethod('POST')) {
 
-        $form->bind($this->getRequest());
-
-        if ($form->isValid()) {
-            $solution = $form->getData();
-
-            $em->persist($solution->getWebsite());
-            $em->persist($solution->getEntity());
-
-            $em->flush();
-
-            return $this->redirect('/home');
         }
-
-        return $this->render(
-            'StcScraperBundle:Default:index.html.twig',
-            array('form' => $form->createView())
-        );
     }
 }
