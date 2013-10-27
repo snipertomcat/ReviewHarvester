@@ -222,7 +222,7 @@ class Entity
      * @param \Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities
      * @return Entity
      */
-    public function addWebsiteEntitie(\Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities)
+    public function addWebsiteEntities(\Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities)
     {
         $this->website_entities[] = $websiteEntities;
     
@@ -234,7 +234,7 @@ class Entity
      *
      * @param \Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities
      */
-    public function removeWebsiteEntitie(\Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities)
+    public function removeWebsiteEntities(\Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities)
     {
         $this->website_entities->removeElement($websiteEntities);
     }

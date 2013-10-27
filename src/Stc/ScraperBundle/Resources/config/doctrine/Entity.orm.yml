@@ -6,7 +6,7 @@ Stc\ScraperBundle\Entity\Entity:
             type: integer
             generator: { strategy: AUTO }
     fields:
-        desc:
+        description:
             type: string
             length: 255
         name:
@@ -14,7 +14,7 @@ Stc\ScraperBundle\Entity\Entity:
             length: 30
         is_active:
             type: string
-            length: 1
+            length: 18
         created_at:
             type: datetime
         updated_at:
