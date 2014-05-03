@@ -5,3 +5,7 @@ stc_scraper_homepage:
 stc_scraper_form_entity_submit:
   pattern:  /insert/entity
   defaults: { _controller: StcScraperBundle:Default:post }
+
+stc_scraper_form_basesite_submit:
+  pattern: /select/basesite
+  defaults: { _controller: StcScraperBundle:Default:start }

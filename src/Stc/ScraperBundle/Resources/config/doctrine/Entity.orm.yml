@@ -12,6 +12,9 @@ Stc\ScraperBundle\Entity\Entity:
         name:
             type: string
             length: 30
+        query_method:
+            type: string
+            length: 50
         is_active:
             type: string
             length: 18

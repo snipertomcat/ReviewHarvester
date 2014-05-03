@@ -10,9 +10,15 @@ class ScrapeSolution
     /**
      * @Assert\Type(type="Stc\ScraperBundle\Entity\Website")
      * @Assert\Valid()
+     * @desc A valid domain to scrape
      */
     protected $website;
 
+    /**
+     * @Assert\Type(type="Stc\ScraperBundle\Entity\Entity")
+     * @Assert\Valid()
+     * @desc A valid search entity
+     */
     protected $entity;
 
     public function getWebsite()

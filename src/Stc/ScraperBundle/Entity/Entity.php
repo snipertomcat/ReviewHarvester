@@ -17,7 +17,7 @@ class Entity
     /**
      * @var string
      */
-    private $desc;
+    private $description;
 
     /**
      * @var string
@@ -76,7 +76,7 @@ class Entity
      */
     public function setDesc($desc)
     {
-        $this->desc = $desc;
+        $this->description = $desc;
     
         return $this;
     }
@@ -88,7 +88,26 @@ class Entity
      */
     public function getDesc()
     {
-        return $this->desc;
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**
@@ -262,5 +281,56 @@ class Entity
     public function setUpdatedAtValue()
     {
         // Add your code here
+    }
+    /**
+     * @var string
+     */
+    private $query_method;
+
+
+    /**
+     * Set query_method
+     *
+     * @param string $queryMethod
+     * @return Entity
+     */
+    public function setQueryMethod($queryMethod)
+    {
+        $this->query_method = $queryMethod;
+    
+        return $this;
+    }
+
+    /**
+     * Get query_method
+     *
+     * @return string 
+     */
+    public function getQueryMethod()
+    {
+        return $this->query_method;
+    }
+
+    /**
+     * Add website_entities
+     *
+     * @param \Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities
+     * @return Entity
+     */
+    public function addWebsiteEntitie(\Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities)
+    {
+        $this->website_entities[] = $websiteEntities;
+    
+        return $this;
+    }
+
+    /**
+     * Remove website_entities
+     *
+     * @param \Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities
+     */
+    public function removeWebsiteEntitie(\Stc\ScraperBundle\Entity\WebsiteEntity $websiteEntities)
+    {
+        $this->website_entities->removeElement($websiteEntities);
     }
 }

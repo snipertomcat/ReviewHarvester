@@ -1,4 +1,9 @@
-<form action={{ path('stc_scraper_form_entity_submit') }} method="post" {{ form_enctype(form) }}>
+{#
+<form action={{ path('stc_scraper_form_basesite_submit') }} method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <input type="submit" />
 </form>
+#}
+{{ form_start(form) }}
+{{ form_rest(form) }}
+<input type="submit" />
